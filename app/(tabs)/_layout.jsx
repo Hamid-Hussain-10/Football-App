@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function TabLayout() {
   return (
@@ -7,6 +7,11 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: "#000000",
         tabBarInactiveTintColor: "#f8f9f8",
+        headerTitleStyle: {
+          color: "#f8f9f8",
+          fontSize: 22,
+          fontWeight: "bold",
+        },
         tabBarStyle: {
           paddingBottom: 2,
           paddingTop: 10,
@@ -20,17 +25,11 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          headerTitle: "Football App",
-          headerStyle: { backgroundColor: "#9f0703" },
-          headerTitleStyle: { color: "#f8f9f8" },
-          headerRight: () => (
-            <Ionicons
-              name="trophy"
-              size={24}
-              color="#f8f9f8"
-              style={{ marginRight: 10 }}
-            />
-          ),
+          headerTitle: "Football Tournament App",
+          title: "Home",
+          headerStyle: {
+            backgroundColor: "#9f0703",
+          },
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name="home-outline"
@@ -43,13 +42,17 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          title: "Profile",
+           headerTitle: "Tournament Details",
+          title: "Tournament",
+          headerStyle: {
+            backgroundColor: "#9f0703",
+          },
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name="person-outline"
-              size={focused ? 28 : 24}
-              color={color}
-            />
+            <MaterialCommunityIcons
+        name="soccer-field"
+        size={focused ? 30 : 28}
+        color={color}
+      />
           ),
         }}
       />
@@ -57,6 +60,9 @@ export default function TabLayout() {
         name="settings"
         options={{
           title: "Settings",
+          headerStyle: {
+            backgroundColor: "#9f0703",
+          },
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name="settings-outline"

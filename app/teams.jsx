@@ -1,9 +1,10 @@
 import { View, Text } from 'react-native'
+import React from 'react'
 
-export default function Setting() {
+export default function Teams() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ fontSize: 20, fontWeight: "bold" }}>Setting Screen</Text>
+      <Text style={{ fontSize: 20, fontWeight: "bold" }}>Teams Screen</Text>
     </View>
   )
 }

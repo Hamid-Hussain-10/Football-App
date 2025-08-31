@@ -16,10 +16,11 @@ export default function TabLayout() {
           paddingBottom: 2,
           paddingTop: 10,
           backgroundColor: "#9f0703",
-          borderRadius: 40,
+          borderTopLeftRadius: 45,
+          borderTopRightRadius: 45,
           height: 80,
         },
-        tabBarLabelStyle: { fontSize: 12 },
+        tabBarLabelStyle: { fontSize: 10 },
       }}
     >
       <Tabs.Screen
@@ -40,19 +41,19 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="TournamentDetails"
         options={{
-           headerTitle: "Tournament Details",
+          headerTitle: "Tournament Details",
           title: "Tournament",
           headerStyle: {
             backgroundColor: "#9f0703",
           },
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons
-        name="soccer-field"
-        size={focused ? 30 : 28}
-        color={color}
-      />
+              name="soccer-field"
+              size={focused ? 30 : 28}
+              color={color}
+            />
           ),
         }}
       />

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -47,6 +47,12 @@ export default function TournamentDetails() {
         <Text style={styles.detail}> {endDate || "10-10-2025"}</Text>
       </View>
       <View style={styles.line}></View>
+      <View style={styles.imagecontainer}>
+        <Image
+          source={require("../../assets/images/goal.jpeg")}
+          style={styles.detailsimage}
+        />
+      </View>
     </View>
   );
 }
@@ -58,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     padding: 16,
     backgroundColor: "#fff",
-    marginTop:10,
+    marginTop: 10,
   },
   detail: {
     fontSize: 16,
@@ -75,5 +81,12 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: "#51834a",
     marginVertical: 10,
+  },
+  imagecontainer: {
+    width: "100%",
+  },
+  detailsimage: {
+    width: "100%",
+    height: "75%",
   },
 });

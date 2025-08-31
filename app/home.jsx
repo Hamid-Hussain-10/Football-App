@@ -85,7 +85,7 @@ export default function Home() {
               style={[styles.button, { backgroundColor: "#0c5702" }]}
               onPress={() =>
                 router.push({
-                  pathname: "./(tabs)/profile",
+                  pathname: "./(tabs)/TournamentDetails",
                   params: { tournamentName, venue, teams, startDate, endDate },
                 })
               }
@@ -108,7 +108,7 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   scrollContainer: { flexGrow: 1 },
-  container: { flex: 1, backgroundColor: "#fcfcfc" },
+  container: { flex: 1, backgroundColor: "#f8f9f8" },
   imageContainer: { width: "100%" },
   image: { width: "100%", height: 250 },
   mainContainer: {
@@ -116,16 +116,16 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     width: "100%",
-    backgroundColor: "#ffffff",
-    padding: 16,
+    backgroundColor: "#f8f9f8",
+    padding: 10,
   },
   contentText: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "bold",
     color: "#b31616",
-    marginBottom: 10,
+    marginBottom: 5,
   },
-  inputContainer: { width: "100%", marginVertical: 10, padding: 10 },
+  inputContainer: { width: "100%", marginVertical: 5, padding: 10 },
   input: {
     width: "100%",
     borderWidth: 1,
@@ -135,17 +135,15 @@ const styles = StyleSheet.create({
     borderColor: "#0c5702",
     borderRadius: 10,
     padding: 10,
-    fontSize: 16,
+    fontSize: 13,
     color: "#000",
-    backgroundColor: "#f9f9f9",
-    marginBottom: 12,
+    backgroundColor: "#f8f9f8",
+    marginBottom: 10,
   },
   buttonRow: {
     flexDirection: "row",
     justifyContent: "space-evenly",
-    width: "100%",
-    marginTop: 5,
-    marginBottom: 5,
+    width: "90%",
   },
   button: {
     flex: 1,
@@ -155,8 +153,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonText: {
-    color: "#fff",
-    fontSize: 16,
+    color: "#f8f9f8",
+    fontSize: 13,
     fontWeight: "bold",
     fontStyle: "italic",
   },

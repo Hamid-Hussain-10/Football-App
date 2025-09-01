@@ -13,10 +13,13 @@ export default function HomeDrawer() {
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: "#0c5702" },
+        headerStyle: { backgroundColor: "#0c5702", height: 55 },
         headerTintColor: "#f8f9f8",
         drawerActiveTintColor: "#9f0703",
         drawerInactiveTintColor: "#000",
+        headerTitleStyle: {
+          fontSize: 16,
+        },
         headerRight: () => (
           <Ionicons
             name="trophy"

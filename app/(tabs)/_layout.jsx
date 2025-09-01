@@ -9,12 +9,12 @@ export default function TabLayout() {
         tabBarInactiveTintColor: "#f8f9f8",
         headerTitleStyle: {
           color: "#f8f9f8",
-          fontSize: 22,
+          fontSize: 18,
           fontWeight: "bold",
         },
+        
+        // footer style
         tabBarStyle: {
-          paddingBottom: 2,
-          paddingTop: 10,
           backgroundColor: "#9f0703",
           borderTopLeftRadius: 45,
           borderTopRightRadius: 45,
@@ -34,7 +34,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name="home-outline"
-              size={focused ? 28 : 24}
+              size={focused ? 24 : 22}
               color={color}
             />
           ),
@@ -49,25 +49,25 @@ export default function TabLayout() {
             backgroundColor: "#9f0703",
           },
           tabBarIcon: ({ color, focused }) => (
-            <MaterialCommunityIcons
-              name="soccer-field"
-              size={focused ? 30 : 28}
+            <Ionicons
+              name="football"
+              size={focused ? 24 : 22}
               color={color}
             />
           ),
         }}
       />
       <Tabs.Screen
-        name="settings"
+        name="lineup"
         options={{
-          title: "Settings",
+          title: "Line Up",
           headerStyle: {
             backgroundColor: "#9f0703",
           },
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name="settings-outline"
-              size={focused ? 28 : 24}
+            <MaterialCommunityIcons
+              name="soccer-field"
+              size={focused ? 24 : 22}
               color={color}
             />
           ),

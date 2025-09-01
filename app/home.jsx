@@ -28,13 +28,16 @@ export default function Home() {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={styles.scrollContainer}
+    >
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
             source={require("../assets/images/Home.png")}
             style={styles.image}
-            resizeMode="contain"
+            resizeMode="cover"
           />
         </View>
 
@@ -44,21 +47,21 @@ export default function Home() {
           <View style={styles.inputContainer}>
             <TextInput
               placeholder="Tournament Name"
-              placeholderTextColor="#999"
+              placeholderTextColor="#777"
               style={styles.input}
               value={tournamentName}
               onChangeText={setTournamentName}
             />
             <TextInput
               placeholder="Tournament Venue"
-              placeholderTextColor="#999"
+              placeholderTextColor="#777"
               style={styles.input}
               value={venue}
               onChangeText={setVenue}
             />
             <TextInput
               placeholder="Number of Teams"
-              placeholderTextColor="#999"
+              placeholderTextColor="#777"
               style={styles.input}
               value={teams}
               onChangeText={setTeams}
@@ -66,14 +69,16 @@ export default function Home() {
             />
             <TextInput
               placeholder="Start Date"
-              placeholderTextColor="#999"
+              keyboardType="numeric"
+              placeholderTextColor="#777"
               style={styles.input}
               value={startDate}
               onChangeText={setStartDate}
             />
             <TextInput
               placeholder="End Date"
-              placeholderTextColor="#999"
+              keyboardType="numeric"
+              placeholderTextColor="#777"
               style={styles.input}
               value={endDate}
               onChangeText={setEndDate}
@@ -82,7 +87,7 @@ export default function Home() {
 
           <View style={styles.buttonRow}>
             <TouchableOpacity
-              style={[styles.button, { backgroundColor: "#0c5702" }]}
+              style={[styles.button, styles.saveButton]}
               onPress={() =>
                 router.push({
                   pathname: "./(tabs)/TournamentDetails",
@@ -94,7 +99,7 @@ export default function Home() {
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={[styles.button, { backgroundColor: "#b31616" }]}
+              style={[styles.button, styles.clearButton]}
               onPress={clearAll}
             >
               <Text style={styles.buttonText}>Clear All</Text>
@@ -107,25 +112,39 @@ export default function Home() {
 }
 
 const styles = StyleSheet.create({
-  scrollContainer: { flexGrow: 1 },
-  container: { flex: 1, backgroundColor: "#f8f9f8" },
-  imageContainer: { width: "100%" },
-  image: { width: "100%", height: 250 },
-  mainContainer: {
-    minHeight: 400,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    width: "100%",
+  scrollContainer: {
+    flexGrow: 1,
     backgroundColor: "#f8f9f8",
-    padding: 10,
+  },
+  container: {
+    flex: 1,
+  },
+  imageContainer: {
+    width: "100%",
+    height: 220,
+    overflow: "hidden",
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+  },
+  mainContainer: {
+    marginTop: 15,
+    alignItems: "center",
+    paddingHorizontal: 20,
   },
   contentText: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold",
     color: "#b31616",
-    marginBottom: 5,
+    marginBottom: 15,
   },
-  inputContainer: { width: "100%", marginVertical: 5, padding: 10 },
+  inputContainer: {
+    width: "100%",
+    marginBottom: 20,
+  },
   input: {
     width: "100%",
     borderWidth: 1,
@@ -142,20 +161,25 @@ const styles = StyleSheet.create({
   },
   buttonRow: {
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
     width: "90%",
   },
   button: {
     flex: 1,
-    marginHorizontal: 10,
-    paddingVertical: 10,
-    borderRadius: 20,
+    paddingVertical: 12,
+    borderRadius: 25,
     alignItems: "center",
+    marginHorizontal: 5,
+  },
+  saveButton: {
+    backgroundColor: "#0c5702",
+  },
+  clearButton: {
+    backgroundColor: "#b31616",
   },
   buttonText: {
-    color: "#f8f9f8",
-    fontSize: 13,
+    color: "#fff",
+    fontSize: 12,
     fontWeight: "bold",
-    fontStyle: "italic",
   },
 });

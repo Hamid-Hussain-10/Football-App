@@ -6,6 +6,7 @@ import Matches from "../matches";
 import Players from "../players";
 import Teams from "../teams";
 import Home from "../home";
+import MatchStatistics from "../statistics";
 
 const Drawer = createDrawerNavigator();
 
@@ -77,6 +78,16 @@ export default function HomeDrawer() {
           title: "Players",
           drawerIcon: ({ color, size }) => (
             <Ionicons name="person-circle" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="statistics"
+        component={MatchStatistics}
+        options={{
+          title: "Statistics",
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="stats-chart" size={size} color={color} />
           ),
         }}
       />

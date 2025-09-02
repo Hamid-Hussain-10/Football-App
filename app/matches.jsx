@@ -188,8 +188,6 @@ export default function Matches() {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.line}></View>
-
       <FlatList
         data={matches}
         keyExtractor={(item) => item.id}
@@ -249,8 +247,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#f8f9f8",
     padding: 15,
     marginVertical: 6,
-    borderRadius: 12,
+    borderRadius: 26,
     borderTopLeftRadius: 0,
+    borderBottomRightRadius: 0,
     elevation: 3,
     position: "relative",
     borderWidth: 1,
@@ -262,12 +261,6 @@ const styles = StyleSheet.create({
   vsText: { fontSize: 16, fontWeight: "bold", color: "#0c5702" },
   deleteBtn: { position: "absolute", top: 5, right: 10 },
   deleteText: { fontSize: 16, color: "#b31616" },
-  line: {
-    width: "100%",
-    height: 1,
-    backgroundColor: "#51834a",
-    marginVertical: 5,
-  },
   scoreInput: {
     width: 40,
     height: 30,

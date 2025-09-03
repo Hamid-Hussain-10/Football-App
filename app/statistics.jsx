@@ -125,7 +125,6 @@ export default function Statistics() {
 
   return (
     <ScrollView style={{ flex: 1, padding: 10 }}>
-      {/* Form */}
       <View style={styles.formRow}>
         <TextInput
           placeholder="Team Name"

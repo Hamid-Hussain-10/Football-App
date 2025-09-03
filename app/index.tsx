@@ -1,6 +1,13 @@
-import { Text, TouchableOpacity, ImageBackground, View, StatusBar as RNStatusBar } from "react-native";
+import {
+  TouchableOpacity,
+  ImageBackground,
+  View,
+  StatusBar as RNStatusBar,
+  Platform,
+} from "react-native";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Index() {
   const router = useRouter();
@@ -13,10 +20,8 @@ export default function Index() {
         justifyContent: "flex-end",
         alignItems: "center",
         paddingBottom: 70,
-        width: "105%",
-        height: "110%",
       }}
-      resizeMode="stretch"
+      resizeMode="cover"
     >
       <View
         style={{
@@ -24,22 +29,25 @@ export default function Index() {
           top: 0,
           left: 0,
           right: 0,
-          height: RNStatusBar.currentHeight,
+          height: Platform.OS === "android" ? RNStatusBar.currentHeight : 44,
           backgroundColor: "#9f0703",
         }}
       />
       <StatusBar style="light" />
 
       <TouchableOpacity
+        activeOpacity={0.7}
         onPress={() => router.push("./(tabs)")}
         style={{
           backgroundColor: "#9f0703",
-          padding: 10,
+          padding: 12,
           marginBottom: 10,
-          borderRadius: 10,
+          borderRadius: 50,
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <Text style={{ color: "#f8f9f8" }}>Go Next</Text>
+        <Ionicons name="football" size={28} color="#f8f9f8" />
       </TouchableOpacity>
     </ImageBackground>
   );

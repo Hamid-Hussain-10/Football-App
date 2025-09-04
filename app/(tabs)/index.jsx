@@ -7,6 +7,9 @@ import Players from "../players";
 import Teams from "../teams";
 import Home from "../home";
 import MatchStatistics from "../statistics";
+import { TouchableOpacity } from "react-native";
+import { router } from "expo-router";
+import Prices from "../Prices";
 
 const Drawer = createDrawerNavigator();
 
@@ -21,13 +24,19 @@ export default function HomeDrawer() {
         headerTitleStyle: {
           fontSize: 16,
         },
+        drawerStyle: {
+          width: 200,
+        },
         headerRight: () => (
+            <TouchableOpacity onPress={() => router.push("/Prices")}>
           <Ionicons
             name="trophy"
+            component={Prices}
             size={24}
             color="#f8f9f8"
             style={{ marginRight: 12 }}
           />
+          </TouchableOpacity>
         ),
       }}
     >

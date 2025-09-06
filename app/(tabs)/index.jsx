@@ -50,6 +50,26 @@ export default function HomeDrawer() {
           ),
         }}
       />
+        <Drawer.Screen
+          name="players"
+          component={Players}
+          options={{
+            title: "Players",
+            drawerIcon: ({ color, size }) => (
+              <Ionicons name="person-circle" size={size} color={color} />
+            ),
+          }}
+        />
+          <Drawer.Screen
+            name="teams"
+            component={Teams}
+            options={{
+              title: "Teams",
+              drawerIcon: ({ color, size }) => (
+                <Ionicons name="people" size={size} color={color} />
+              ),
+            }}
+          />
       <Drawer.Screen
         name="matches"
         component={Matches}
@@ -67,26 +87,6 @@ export default function HomeDrawer() {
           title: "Pointstable",
           drawerIcon: ({ color, size }) => (
             <Ionicons name="trophy" size={size} color={color} />
-          ),
-        }}
-      />
-      <Drawer.Screen
-        name="teams"
-        component={Teams}
-        options={{
-          title: "Teams",
-          drawerIcon: ({ color, size }) => (
-            <Ionicons name="people" size={size} color={color} />
-          ),
-        }}
-      />
-      <Drawer.Screen
-        name="players"
-        component={Players}
-        options={{
-          title: "Players",
-          drawerIcon: ({ color, size }) => (
-            <Ionicons name="person-circle" size={size} color={color} />
           ),
         }}
       />
